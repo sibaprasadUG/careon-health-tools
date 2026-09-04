@@ -9,6 +9,8 @@ type Tool = {
   icon: string;
 };
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const tools: Tool[] = [
   {
     id: "bmi",
@@ -16,7 +18,7 @@ const tools: Tool[] = [
     description:
       "Check your Body Mass Index and understand your weight category.",
     action: "Calculate BMI",
-    icon: "/assets/icons/bmi.png",
+    icon: `${BASE_URL}assets/icons/bmi.png`,
   },
   {
     id: "ideal-weight",
@@ -24,7 +26,7 @@ const tools: Tool[] = [
     description:
       "Find an estimated healthy weight range based on your height.",
     action: "Check Weight",
-    icon: "/assets/icons/ideal-weight.png",
+    icon: `${BASE_URL}assets/icons/ideal-weight.png`,
   },
   {
     id: "bmr",
@@ -32,7 +34,7 @@ const tools: Tool[] = [
     description:
       "Calculate your Basal Metabolic Rate and resting energy needs.",
     action: "Calculate BMR",
-    icon: "/assets/icons/bmr.png",
+    icon: `${BASE_URL}assets/icons/bmr.png`,
   },
   {
     id: "calories",
@@ -40,7 +42,7 @@ const tools: Tool[] = [
     description:
       "Estimate your daily calorie needs based on your activity level.",
     action: "Calculate Calories",
-    icon: "/assets/icons/calories.png",
+    icon: `${BASE_URL}assets/icons/calories.png`,
   },
   {
     id: "water",
@@ -48,7 +50,7 @@ const tools: Tool[] = [
     description:
       "Get a simple daily hydration target based on your body weight.",
     action: "Calculate Water",
-    icon: "/assets/icons/water.png",
+    icon: `${BASE_URL}assets/icons/water.png`,
   },
   {
     id: "blood-pressure",
@@ -56,7 +58,7 @@ const tools: Tool[] = [
     description:
       "Record and track your blood pressure readings over time.",
     action: "Track BP",
-    icon: "/assets/icons/blood-pressure.png",
+    icon: `${BASE_URL}assets/icons/blood-pressure.png`,
   },
   {
     id: "blood-sugar",
@@ -64,7 +66,7 @@ const tools: Tool[] = [
     description:
       "Record and monitor your blood glucose measurements.",
     action: "Track Sugar",
-    icon: "/assets/icons/blood-sugar.png",
+    icon: `${BASE_URL}assets/icons/blood-sugar.png`,
   },
   {
     id: "weight",
@@ -72,7 +74,7 @@ const tools: Tool[] = [
     description:
       "Track your body weight and follow your progress over time.",
     action: "Track Weight",
-    icon: "/assets/icons/weight.png",
+    icon: `${BASE_URL}assets/icons/weight.png`,
   },
 ];
 
@@ -369,12 +371,10 @@ const Home: React.FC = () => {
           align-items: flex-start;
           box-shadow:
             0 5px 20px rgba(31, 86, 91, 0.055);
-
           transition:
             transform 0.2s ease,
             box-shadow 0.2s ease,
             border-color 0.2s ease;
-
           font-family: inherit;
         }
 
@@ -402,28 +402,21 @@ const Home: React.FC = () => {
           width: 88px;
           height: 88px;
           border-radius: 20px;
-
           background:
             linear-gradient(
               145deg,
               #F0FAF9,
               #E2F4F1
             );
-
           display: flex;
           align-items: center;
           justify-content: center;
-
           margin-bottom: 16px;
-
           border: 1px solid #D5ECE9;
-
           box-shadow:
             inset 0 1px 0 rgba(255, 255, 255, 0.95),
             0 5px 12px rgba(27, 141, 143, 0.06);
-
           overflow: hidden;
-
           transition:
             transform 0.25s ease,
             box-shadow 0.25s ease;
@@ -431,7 +424,6 @@ const Home: React.FC = () => {
 
         .careon-tool-card:hover .careon-tool-icon {
           transform: translateY(-2px) scale(1.04);
-
           box-shadow:
             inset 0 1px 0 rgba(255, 255, 255, 0.95),
             0 9px 20px rgba(27, 141, 143, 0.12);
@@ -444,7 +436,6 @@ const Home: React.FC = () => {
           display: block;
           user-select: none;
           -webkit-user-drag: none;
-
           filter:
             drop-shadow(
               0 4px 5px rgba(0, 0, 0, 0.10)
@@ -484,11 +475,9 @@ const Home: React.FC = () => {
           margin-top: 17px;
           padding-top: 13px;
           border-top: 1px solid #EDF3F2;
-
           display: flex;
           align-items: center;
           justify-content: space-between;
-
           color: #168588;
           font-size: 11.5px;
           font-weight: 800;
@@ -498,14 +487,11 @@ const Home: React.FC = () => {
           width: 27px;
           height: 27px;
           border-radius: 50%;
-
           background: #E8F7F4;
           color: #168588;
-
           display: flex;
           align-items: center;
           justify-content: center;
-
           transition:
             transform 0.2s ease,
             background 0.2s ease;
@@ -530,7 +516,6 @@ const Home: React.FC = () => {
           max-width: 600px;
           margin: 48px auto 0;
           padding: 20px 15px;
-
           color: #7A9098;
           font-size: 11px;
           line-height: 1.65;
@@ -545,12 +530,10 @@ const Home: React.FC = () => {
         ========================================= */
 
         @media (max-width: 1023px) {
-
           .careon-tools-grid {
             grid-template-columns:
               repeat(2, minmax(0, 1fr));
           }
-
         }
 
         /* =========================================
@@ -558,7 +541,6 @@ const Home: React.FC = () => {
         ========================================= */
 
         @media (max-width: 599px) {
-
           .careon-home-header {
             padding: 12px 15px;
           }
@@ -648,7 +630,6 @@ const Home: React.FC = () => {
             min-height: 0;
             padding: 17px;
             border-radius: 17px;
-
             display: grid;
             grid-template-columns: 72px 1fr;
             column-gap: 14px;
@@ -659,7 +640,6 @@ const Home: React.FC = () => {
             width: 72px;
             height: 72px;
             border-radius: 17px;
-
             grid-row: 1 / span 3;
             margin: 0;
           }
@@ -693,11 +673,9 @@ const Home: React.FC = () => {
             margin-top: 34px;
             font-size: 10.5px;
           }
-
         }
 
         @media (max-width: 390px) {
-
           .careon-brand-name {
             font-size: 16px;
           }
@@ -710,7 +688,6 @@ const Home: React.FC = () => {
             padding: 0 7px;
             font-size: 9px;
           }
-
         }
 
         /* =========================================
@@ -718,7 +695,6 @@ const Home: React.FC = () => {
         ========================================= */
 
         @media (prefers-reduced-motion: reduce) {
-
           .careon-tool-card,
           .careon-tool-icon,
           .careon-arrow,
@@ -729,7 +705,6 @@ const Home: React.FC = () => {
           html {
             scroll-behavior: auto;
           }
-
         }
       `}</style>
 
@@ -738,19 +713,16 @@ const Home: React.FC = () => {
         {/* HEADER */}
 
         <header className="careon-home-header">
-
           <div className="careon-header-inner">
 
             {/* BRAND */}
 
             <div className="careon-brand-wrap">
-
               <div className="careon-logo">
                 C
               </div>
 
               <div>
-
                 <h1 className="careon-brand-name">
                   Care<span>On</span> Health Tools
                 </h1>
@@ -758,15 +730,12 @@ const Home: React.FC = () => {
                 <p className="careon-brand-tagline">
                   Caring Beyond Treatment
                 </p>
-
               </div>
-
             </div>
 
             {/* NAVIGATION */}
 
             <nav className="careon-header-nav">
-
               <button
                 type="button"
                 className="careon-nav-button primary"
@@ -775,7 +744,6 @@ const Home: React.FC = () => {
                 <span className="careon-nav-icon">
                   ◷
                 </span>
-
                 History
               </button>
 
@@ -787,14 +755,11 @@ const Home: React.FC = () => {
                 <span className="careon-nav-icon">
                   ▣
                 </span>
-
                 Reports
               </button>
-
             </nav>
 
           </div>
-
         </header>
 
         {/* MAIN */}
@@ -806,11 +771,8 @@ const Home: React.FC = () => {
           <section className="careon-hero">
 
             <div className="careon-eyebrow">
-
               <span className="careon-eyebrow-dot" />
-
               Trusted Health Tools
-
             </div>
 
             <h2>
@@ -844,7 +806,6 @@ const Home: React.FC = () => {
             <div className="careon-tools-grid">
 
               {tools.map((tool) => (
-
                 <button
                   key={tool.id}
                   type="button"
@@ -855,13 +816,11 @@ const Home: React.FC = () => {
                   {/* 3D REALISTIC ICON */}
 
                   <div className="careon-tool-icon">
-
                     <img
                       src={tool.icon}
                       alt=""
                       draggable={false}
                     />
-
                   </div>
 
                   {/* TOOL NAME */}
@@ -892,7 +851,6 @@ const Home: React.FC = () => {
                         xmlns="http://www.w3.org/2000/svg"
                         aria-hidden="true"
                       >
-
                         <path
                           d="M5 12H19M13 6L19 12L13 18"
                           stroke="currentColor"
@@ -900,7 +858,6 @@ const Home: React.FC = () => {
                           strokeLinecap="round"
                           strokeLinejoin="round"
                         />
-
                       </svg>
 
                     </span>
@@ -908,7 +865,6 @@ const Home: React.FC = () => {
                   </div>
 
                 </button>
-
               ))}
 
             </div>
