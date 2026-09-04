@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import Home from './pages/Home';
 import History from './pages/History';
@@ -15,13 +15,10 @@ import WeightTracker from './pages/tools/WeightTracker';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
-
-        {/* Home */}
         <Route path="/" element={<Home />} />
 
-        {/* Health Tools */}
         <Route path="/bmi" element={<BMICalculator />} />
         <Route path="/ideal-weight" element={<IdealWeight />} />
         <Route path="/bmr" element={<BMRCalculator />} />
@@ -31,17 +28,12 @@ function App() {
         <Route path="/blood-sugar" element={<BloodSugar />} />
         <Route path="/weight" element={<WeightTracker />} />
 
-        {/* History */}
         <Route path="/history" element={<History />} />
-
-        {/* Reports */}
         <Route path="/reports" element={<Reports />} />
 
-        {/* Unknown URL → Home */}
         <Route path="*" element={<Navigate to="/" replace />} />
-
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
