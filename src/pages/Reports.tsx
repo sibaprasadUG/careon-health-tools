@@ -224,7 +224,7 @@ const Reports: React.FC = () => {
     return new Promise((resolve, reject) => {
       const img = new Image();
       img.crossOrigin = 'anonymous';
-      img.src = '/assets/health-report-template.png';
+      img.src = '/careon-health-tools/assets/health-report-template.png';
 
       img.onload = () => {
         try {
