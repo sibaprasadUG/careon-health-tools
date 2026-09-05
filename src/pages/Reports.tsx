@@ -473,26 +473,25 @@ const Reports: React.FC = () => {
   // ==========================================================
 
   const mask = (
-    doc: jsPDF,
-    x: number,
-    y: number,
-    w: number,
-    h: number
+    doc: jsPDF, x: number, y: number, w: number, h: number
   ): void => {
-    doc.setFillColor(
-      255,
-      255,
-      255
-    );
-
+    doc.setFillColor(255, 255, 255);
+    if (w >= 250 && h >= 100) {
+      [790, 822, 854, 886, 918].forEach((yy) =>
+        doc.rect(pxX(x), pxY(yy - 9), pxX(w), pxY(14), 'F')
+      );
+      return;
+    }
+    // Clear only the central text area; keep template artwork intact.
+    const mw = Math.max(44, Math.min(w * 0.62, 145));
+    const mh = Math.max(11, Math.min(h * 0.48, 18));
+    const mx = x + (w - mw) / 2;
+    const my = y + (h - mh) / 2;
     doc.rect(
-      pxX(x),
-      pxY(y),
-      pxX(w),
-      pxY(h),
-      'F'
+      pxX(mx), pxY(my), pxX(mw), pxY(mh), 'F'
     );
   };
+
 
   const drawText = (
     doc: jsPDF,
